@@ -18,6 +18,8 @@
 Puppet::Type.type(:tuned).provide(:tunedadm) do
     desc "Tuned provider."
 
+    commands :tuned_adm => "/usr/sbin/tuned-adm"
+
     def create
         Puppet.info("Tuned: Switching to profile '#{@resource[:name]}'")
         system("tuned-adm profile #{@resource[:name]}")
