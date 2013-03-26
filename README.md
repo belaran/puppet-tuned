@@ -12,3 +12,13 @@ based on a generic profile such as:
 
 This module allow to used tuned, through Puppet. Of course, tuned being a linux
 tool, no implementation is provided for Windows.
+
+Sample usage:
+
+tuned::tune { 'tuning-network-for-latency-perf':
+  profile => 'latency-performance',
+}
+
+or a shorter approach, using the default name:
+
+tuned::tune { 'powersave': }
